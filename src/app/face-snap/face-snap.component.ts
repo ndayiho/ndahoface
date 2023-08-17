@@ -7,19 +7,19 @@ import { FaceSnap } from '../models/face-snap.model';
 })
 export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap;
-  snapBoutonLabel!: string;
+  buttonText!: string;
 
   ngOnInit() {
-    this.snapBoutonLabel = "On snap!";
+    this.buttonText = "On snap!";
   }
 
   onSnap() {
-    if (this.snapBoutonLabel === "On snap!") {
+    if (this.buttonText === "On snap!") {
       this.faceSnap.snaps++;
-      this.snapBoutonLabel = "Oops unSnap!";
+      this.buttonText = "Oops, unSnap!";
     } else {
       this.faceSnap.snaps--;
-      this.snapBoutonLabel = "On snap!";
+      this.buttonText = "On snap!";
     }
   }
 }
